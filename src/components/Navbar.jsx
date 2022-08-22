@@ -4,6 +4,8 @@ import { close, logo, menu } from '../assets';
 
 import { navLinks } from '../constants';
 
+import { motion } from 'framer-motion';
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -13,13 +15,14 @@ const Navbar = () => {
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
-          <li
+          <motion.li
+            whileHover={{ y: 3 }}
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] 
             ${index === navLinks.length - 1 ? 'mr-0' : 'mr-10'} text-white`}
           >
             <a href={`#${nav.id}`}>{nav.title}</a>
-          </li>
+          </motion.li>
         ))}
       </ul>
 
