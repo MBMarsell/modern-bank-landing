@@ -1,6 +1,8 @@
 import { apple, bill, google } from '../assets';
 import styles, { layout } from '../style';
 
+import { motion } from 'framer-motion';
+
 const Billing = () => (
   <section id="product" className={layout.sectionReverse}>
     <div className={layout.sectionImgReverse}>
@@ -28,15 +30,17 @@ const Billing = () => (
       </p>
 
       <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
-        <img
+        <motion.img
           src={apple}
           alt="download on apple store"
           className="w-[128px] h-[42px] object-contain mr-5 cursor-pointer"
+          whileHover={{ scale: 1.1 }}
         />
-        <img
+        <motion.img
           src={google}
           alt="download on google play"
           className="w-[128px] h-[42px] object-contain cursor-pointer"
+          whileHover={{ scale: 1.1 }}
         />
       </div>
     </div>
